@@ -12,12 +12,14 @@ import { DbContext } from "../../App";
 interface AuthTypes {
   authenticated: boolean;
   setAuthenticated: Dispatch<SetStateAction<boolean>>;
+  username: string;
 }
 
 export const AuthContext = createContext({} as AuthTypes);
 
 const AuthProvider: FC = ({ children }) => {
   const [authenticated, setAuthenticated] = useState(false);
+  const [username, setUsername] = useState("");
   const { gun, user } = useContext(DbContext);
 
   useEffect(() => {
@@ -26,11 +28,12 @@ const AuthProvider: FC = ({ children }) => {
       setAuthenticated(true);
       const alias = await user.get("alias");
       console.log(alias);
+      setUsername(String(alias))
     });
   }, []);
 
   return (
-    <AuthContext.Provider value={{ authenticated, setAuthenticated }}>
+    <AuthContext.Provider value={{ authenticated, setAuthenticated, username }}>
       {children}
     </AuthContext.Provider>
   );

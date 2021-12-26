@@ -26,16 +26,16 @@ const LoginPage: FC = () => {
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 h-screen flex">
+    <div className="bg-white dark:bg-black h-screen flex">
       <div className="m-auto w-full max-w-xs">
         <form
-          className="bg-white dark:bg-black shadow-md rounded px-8 pt-6 pb-6 mb-4"
+          className="bg-white dark:bg-gray-900 shadow-md rounded px-8 pt-6 pb-6 mb-4"
           onSubmit={submitForm}
         >
           <h1 className="font-bold mb-3 text-4xl">Login</h1>
           {/* Username */}
           <div className="mb-2">
-            <label className="block text-gray-700 text-sm font-bold mb-0">
+            <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-0">
               Username
             </label>
             <input
@@ -43,7 +43,7 @@ const LoginPage: FC = () => {
                 setError("");
                 setUsername(e.target.value);
               }}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none rounded w-full py-2 px-3 bg-white text-gray-700 dark:bg-black dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline"
               id="username"
               type="text"
               placeholder="Username"
@@ -51,7 +51,7 @@ const LoginPage: FC = () => {
           </div>
           {/* Password */}
           <div>
-            <label className="block text-gray-700 text-sm font-bold mb-0">
+            <label className="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-0">
               Password
             </label>
             <input
@@ -59,7 +59,7 @@ const LoginPage: FC = () => {
                 setError("");
                 setPassword(e.target.value);
               }}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              className="shadow appearance-none rounded w-full py-2 px-3 bg-white text-gray-700 dark:bg-black dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline"
               id="password"
               type="password"
               placeholder="******************"
@@ -106,12 +106,6 @@ const LoginPage: FC = () => {
             </Link>
           </p>
         </form>
-        <p className="text-center text-gray-500 text-xs">
-          &copy;2020 Acme Corp. All rights reserved.
-          <Link to="/app/slatt" className="text-lg text-black">
-            Hello
-          </Link>
-        </p>
       </div>
     </div>
   );

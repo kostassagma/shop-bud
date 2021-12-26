@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+  @apply bg-white dark:bg-black text-black dark:text-white;
+}
+
+/* colors: {
+  accent: {
+    light: "rgb(99 102 241 / var(--tw-bg-opacity))",
+    dark: "rgb(67 56 202 / var(--tw-bg-opacity))"
+  },
+  "hvr-accent": {
+    light: "rgb(67 56 202 / var(--tw-bg-opacity))",
+    dark: "rgb(55 48 163 / var(--tw-bg-opacity))"
+  }
+}, */
+
+/* <button className="mt-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+              Get Started
+            </button> */
+
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+  /* background-color: #6366f1; color of the scroll thumb */
+  @apply bg-blue-500 dark:bg-blue-700 hover:bg-blue-700 hover:dark:bg-blue-800;
+}

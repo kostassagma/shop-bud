@@ -9,7 +9,7 @@ const AuthOnly: FC = ({ children }) => {
     return <Navigate to="/login" />;
   }
 
-  return <div>Hello</div>;
+  return <>{children}</>;
 };
 
 export default AuthOnly;
