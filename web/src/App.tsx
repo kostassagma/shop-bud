@@ -12,6 +12,7 @@ import AuthProvider from "./modules/auth/authProvider";
 import List from "./pages/app/[id]";
 import Slatt from "./pages/app/slatt";
 import MobileDash from "./pages/app";
+import { GUN_DB_URL } from "./lin/contants";
 
 interface DbContextTypes {
   gun: IGunChainReference<any, any, "pre_root">;
@@ -21,7 +22,7 @@ interface DbContextTypes {
 export const DbContext = createContext({} as DbContextTypes);
 
 const App: FC = () => {
-  const [gun] = useState(Gun("https://shop-bud-gunjs-relay.herokuapp.com/gun"));
+  const [gun] = useState(Gun(GUN_DB_URL));
   const [user] = useState(gun.user().recall({ sessionStorage: true }));
 
   useEffect(() => {
